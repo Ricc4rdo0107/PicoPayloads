@@ -1,2 +1,2 @@
-Hi, theese are some us rubber ducky payloads.
+Hi, theese are some rubber ducky payloads.
 Enjoy
